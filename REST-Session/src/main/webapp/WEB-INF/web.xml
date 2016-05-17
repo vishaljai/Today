@@ -1,0 +1,38 @@
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+
+	<display-name>Archetype Created Web Application</display-name>
+	<!-- <servlet> <servlet-name>RESTful Jersey Hello World Service</servlet-name> 
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class> 
+		<init-param> <param-name>jersey.config.server.provider.packages</param-name> 
+		<param-value>org.cyb.training.java.rs.resources;org.cyb.training.java.rs.v4.resources</param-value> 
+		</init-param> <load-on-startup>1</load-on-startup> </servlet> <servlet-mapping> 
+		<servlet-name>RESTful Jersey Hello World Service</servlet-name> <url-pattern>/rest/*</url-pattern> 
+		</servlet-mapping> -->
+
+	<servlet>
+		<servlet-name>javax.ws.rs.core.Application</servlet-name>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>javax.ws.rs.core.Application</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Admin</web-resource-name>
+			<url-pattern>/rest/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>users</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>		
+	</login-config>
+
+	<security-role>
+		<role-name>managers</role-name>
+	</security-role>
+</web-app>

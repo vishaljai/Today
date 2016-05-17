@@ -1,0 +1,9 @@
+{
+"id" : 100,
+"title" : "Payment gateway",
+"description" : "We need to build a payment gatway which will work with VISA credit cards",
+"owner": 1,
+"estimate" : 10.0,
+"efforts" : 0,
+"state" : "backlog"
+}

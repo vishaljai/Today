@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script type="text/javascript">
+
+  /*
+  //add individual iteam in storage
+  sessionStorage.setItem('tutorialName','HTML5 storage'); 
+  //or 
+  localStorage.trainerName = 'Harshal';
+
+  //retrive individual elements from storage
+  console.log(sessionStorage.getItem('tutorialName'));
+  console.log(localStorage.getItem('trainerName'));
+
+  //removing individual item from storage
+  sessionStorage.removeItem('tutorialName');
+  localStorage.removeItem('trainerName');
+
+
+  console.log("Item removed");
+  console.log(sessionStorage.getItem('tutorialName'));
+  console.log(localStorage.getItem('trainerName'));
+
+  */
+
+    //Session storage
+    if( sessionStorage.hits ){
+     sessionStorage.hits = Number(sessionStorage.hits) +1;
+    } else {
+      sessionStorage.hits = 1;
+    }
+    
+    document.write("SessionStorage Hits :" + sessionStorage.hits + "<br />" );
+
+    //Local Storage storage
+    if( localStorage.hits ){
+      localStorage.hits = Number(localStorage.hits) +1;
+    } else {
+      localStorage.hits = 1;
+    }
+
+    document.write("LocalStorage Hits :" + localStorage.hits );
+
+    //Clear session storage
+    function clearSessionStorage() {
+      sessionStorage.clear();
+    }
+
+    ////Clear Local storage
+    function clearLocalStorage() {
+      localStorage.clear();
+    }
+  </script>
+</head>
+<body>
+  <br />
+  <input type="button" onclick="clearSessionStorage()" value="Clear Session Storage" />
+
+  <br />
+  <input type="button" onclick="clearLocalStorage()" value="Clear Local Storage" />
+</body>
+</html>
